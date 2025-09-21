@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vulture_Mc - Minecraft Server</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Orbitron', sans-serif; }
+body { background:#0a0a0a; color:#fff; scroll-behavior:smooth; overflow-x:hidden; }
+
+/* Header */
+header { position:fixed; width:100%; top:0; left:0; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; background:rgba(17,17,17,0.95); z-index:100; box-shadow:0 0 10px #00ffff; }
+header .logo { font-family:'Press Start 2P',cursive; font-size:1.6rem; color:#ff0055; text-shadow:0 0 10px #ff0055; }
+header nav a { color:#fff; text-decoration:none; margin-left:1rem; transition:0.3s; }
+header nav a:hover { color:#00ffff; text-shadow:0 0 10px #00ffff; }
+
+/* Sections */
+section { padding:6rem 2rem 3rem 2rem; text-align:center; min-height:100vh; }
+.hidden { display:none; }
+
+/* Hero */
+.hero h1 { font-size:2.2rem; margin-bottom:1rem; color:#00ffff; text-shadow:0 0 10px #00ffff, 0 0 20px #00ffff; animation: glow 2s infinite alternate; }
+.hero p { font-size:1rem; margin-bottom:2rem; }
+.hero .btn { background:#111; color:#fff; padding:0.8rem 1.5rem; border-radius:5px; text-decoration:none; transition:0.3s; display:inline-block; }
+.hero .btn:hover { background:#ff0055; box-shadow:0 0 20px #ff0055; }
+
+/* Cards */
+.cards, .shop-items { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-top:2rem; }
+.card, .item { background:#111; padding:1.5rem; border-radius:10px; min-width:150px; transition:0.3s; box-shadow:0 0 5px #00ffff; cursor:pointer; }
+.card:hover, .item:hover { background:#222; transform:scale(1.05); box-shadow:0 0 20px #ff0055; }
+
+/* About */
+.about-section { max-width:800px; margin:auto; line-height:1.6; padding:2rem 1rem; }
+
+/* Shop Sections */
+.shop-section h2 { margin-top:2rem; color:#00ffff; text-shadow:0 0 10px #00ffff; }
+.shop-section .key-card { background:#111; padding:1rem; margin:1rem; border-radius:10px; box-shadow:0 0 5px #00ffff; transition:0.3s; display:inline-block; width:250px; vertical-align:top; text-align:left; }
+.shop-section .key-card:hover { box-shadow:0 0 20px #ff0055; transform:scale(1.05); }
+.shop-section .key-card h3 { color:#ff0055; margin-bottom:0.5rem; }
+.shop-section .key-card p { font-size:0.85rem; margin-bottom:0.5rem; }
+.shop-section .buy-btn { background:#00ffff; color:#111; padding:0.5rem 1rem; border-radius:5px; text-decoration:none; font-weight:bold; transition:0.3s; display:inline-block; margin-top:0.5rem; }
+.shop-section .buy-btn:hover { background:#ff0055; color:#fff; }
+
+/* Footer */
+footer { text-align:center; padding:1.5rem; background:#111; box-shadow:0 -0 10px #00ffff; margin-top:2rem; }
+footer a { color:#00ffff; text-decoration:none; }
+footer a:hover { color:#ff0055; text-shadow:0 0 10px #ff0055; }
+
+/* Animations */
+@keyframes glow { 0%{text-shadow:0 0 10px #00ffff;} 100%{text-shadow:0 0 20px #ff0055;} }
+
+/* Particle Background */
+.particle { position:absolute; width:5px; height:5px; background:#00ffff; border-radius:50%; opacity:0.8; animation: float 6s linear infinite; }
+@keyframes float { 0%{transform:translateY(0) translateX(0); opacity:1;} 100%{transform:translateY(-1200px) translateX(500px); opacity:0;} }
+
+/* Responsive */
+@media(max-width:768px){ .cards, .shop-items, .shop-section .key-card { flex-direction:column; width:80%; margin:auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Vulture_Mc</div>
+  <nav>
+    <a href="#" data-section="home">Home </a>
+    <a href="#" data-section="about">About </a>
+    <a href="#" data-section="shop">Shop </a>
+  </nav>
+</header>
+
+<!-- Home -->
+<section id="home" class="hero">
+  <div id="particles"></div>
+  <h1>Welcome to Vulture_Mc </h1>
+  <p>Join our Minecraft adventure!  Survival, PVP, custom kits & epic fun await! </p>
+  <a href="#" class="btn" data-section="shop">Check Shop </a>
+
+  <div class="features">
+    <h2>Why Play With Us?</h2>
+    <div class="cards">
+      <div class="card">??? Custom Kits & Ranks</div>
+      <div class="card">?? Crates & Keys</div>
+      <div class="card">?? Survival & PVP Servers</div>
+      <div class="card">?? Make New Friends</div>
+      <div class="card">?? Exclusive Rewards</div>
+    </div>
+  </div>
+</section>
+  <br>
+  <br>
+  <br>
+<!-- About -->
+<section id="about" class="about-section hidden">
+  <h1>About Vulture_Mc </h1>
+  <br>
+  <br>
+  <p>Vulture_Mc is the ultimate Minecraft server! Join exciting survival worlds, epic PVP arenas, and enjoy custom kits, ranks, and crates. ??? Collect rare items, defeat bosses, and make friends along the way. Our server is fun, friendly, and perfect for all Minecraft lovers!
+  Vulture_MC ?? 
+ Minecraft Like Never Before!Lag-free servers ? Friendly staff ? Ranks, Kits, Crates & Keys ?Fun, peaceful, and good for your mind and skills!   </p>
+</section>
+
+<!-- Shop -->
+<section id="shop" class="shop-section hidden">
+  <h1>Shop & Server Features </h1>
+
+  <!-- Crate Keys -->
+  <h2> Crate Keys</h2>
+  <div class="key-card">
+    <h3>God Key</h3>
+    <p>All armor and tools enchanted up to level 5</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+  <div class="key-card">
+    <h3>Deadly Key</h3>
+    <p>All armor and tools enchanted up to level 6</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+  <div class="key-card">
+    <h3>Vulture Key</h3>
+    <p>All armor and tools enchanted up to level 10</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+
+  <!-- Kits -->
+  <h2>?? Kits</h2>
+  <div class="key-card">
+    <h3>Fire Kit ??</h3>
+    <p>Armor & tools level 4-5, Totem 1, Bow 1, Arrow 1 stack, Food 3 stack, Ender Pearl 3 stack</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+  <div class="key-card">
+    <h3>Killer Kit </h3>
+    <p>Armor & tools level 5-6, Totem 2, Bow 1, Arrow 1 stack, Food 2 stack, Ender Pearl 2 stack</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+  <div class="key-card">
+    <h3>Vulture Kit ??</h3>
+    <p>Armor level 7, Enchanted Bow 1, Includes Fire & Killer Kits</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+
+  <!-- Ranks -->
+  <h2>?? Ranks</h2>
+  <div class="key-card">
+    <h3>Goldy ??</h3>
+    <p>Includes 2 Kits</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+  <div class="key-card">
+    <h3>Spiderz ???</h3>
+    <p>Includes 3 Kits</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+  <div class="key-card">
+    <h3>Vulture Rank ??</h3>
+    <p>Armor & tools level 9 + all 3 Kits</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+
+  <!-- Custom Things -->
+  <h2>? Custom Things</h2>
+  <div class="key-card">
+    <h3>Custom Rank</h3>
+    <p>Create your own rank</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+  <div class="key-card">
+    <h3>Custom Effects ?</h3>
+    <p>Effects up to level 5</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+  <div class="key-card">
+    <h3>Custom Kit ???</h3>
+    <p>Kit with enchantments up to level 5</p>
+    <a href="https://guns.lol/vulture_mc" target="_blank" class="buy-btn">Buy Now</a>
+  </div>
+</section>
+
+<footer>
+  <p>Join our Discord: <a href="#">https://discord.gg/R6QN49WZnx</a></p>
+  <p>&copy; 2025 Vulture_Mc</p>
+</footer>
+
+<script>
+// Particle Background
+const particlesContainer = document.getElementById('particles');
+for(let i=0;i<50;i++){
+  const particle = document.createElement('div');
+  particle.classList.add('particle');
+  particle.style.left = Math.random()*100 + 'vw';
+  particle.style.top = Math.random()*100 + 'vh';
+  particle.style.width = Math.random()*5+2 + 'px';
+  particle.style.height = particle.style.width;
+  particle.style.animationDuration = (Math.random()*5+3) + 's';
+  particle.style.background = `hsl(${Math.random()*360}, 100%, 50%)`;
+  particlesContainer.appendChild(particle);
+}
+
+// Navigation
+const links = document.querySelectorAll('nav a, .btn');
+const sections = document.querySelectorAll('section');
+links.forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    const target = link.getAttribute('data-section');
+    sections.forEach(sec=>sec.classList.add('hidden'));
+    document.getElementById(target).classList.remove('hidden');
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
